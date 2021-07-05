@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 const App = () => {
   const [data, setData] = useState("");
   const [error, setError] = useState({ error: false, message: "" });
+
+  useEffect(() => {
+    // whatever we want to happen on load and update
+    handleFetch();
+  }, []);
 
   const handleFetch = async () => {
     try {
